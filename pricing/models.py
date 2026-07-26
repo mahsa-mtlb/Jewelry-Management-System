@@ -8,6 +8,13 @@ class GoldPrice(models.Model):
         verbose_name="قیمت هر گرم طلا"
     )
 
+    profit_percent = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        default=7,
+        verbose_name="درصد سود"
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name="تاریخ ثبت"
