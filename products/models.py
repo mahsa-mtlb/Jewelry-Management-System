@@ -2,6 +2,8 @@ from django.db import models
 
 from categories.models import Category
 
+from .services import calculate_final_price
+
 
 class Product(models.Model):
     name = models.CharField(
@@ -68,3 +70,7 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.product_code})"
+
+    @property
+    def final_price(self):
+        return calculate_final_price(self)
