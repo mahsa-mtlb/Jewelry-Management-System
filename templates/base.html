@@ -6,13 +6,28 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Jewelry Management System</title>
+    <title>{% block title %}Jewelry Management{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
+     {% include 'includes/navbar.html' %}
 
-{% block content %}
-{% endblock %}
+      <div class="container">
 
+        {% include 'includes/sidebar.html' %}
+
+        <main>
+
+            {% include 'includes/messages.html' %}
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+    </div>
+    
 </body>
 </html>
