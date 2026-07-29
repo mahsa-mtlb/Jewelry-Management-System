@@ -1,11 +1,19 @@
-{% extends 'base.html' %}
-
-{% block title %}
-ثبت دسته‌بندی
-{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
 
-<h1>ثبت / ویرایش دسته‌بندی</h1>
+<h2>ثبت دسته‌بندی</h2>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        ذخیره
+    </button>
+
+</form>
 
 {% endblock %}

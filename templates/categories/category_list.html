@@ -1,11 +1,23 @@
-{% extends 'base.html' %}
-
-{% block title %}
-دسته‌بندی‌ها
-{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
 
-<h1>لیست دسته‌بندی‌ها</h1>
+<h2>دسته‌بندی‌ها</h2>
+
+<a href="{% url 'categories:create' %}">
+    افزودن دسته‌بندی
+</a>
+
+<hr>
+
+{% for category in categories %}
+
+<p>{{ category.name }}</p>
+
+{% empty %}
+
+<p>دسته‌بندی‌ای وجود ندارد.</p>
+
+{% endfor %}
 
 {% endblock %}

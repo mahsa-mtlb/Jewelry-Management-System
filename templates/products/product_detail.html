@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}
 جزئیات محصول
@@ -6,6 +6,56 @@
 
 {% block content %}
 
-<h1>جزئیات محصول</h1>
+<h2>جزئیات محصول</h2>
+
+<hr>
+
+<p><strong>نام:</strong> {{ product.name }}</p>
+
+<p><strong>کد محصول:</strong> {{ product.product_code }}</p>
+
+<p><strong>دسته‌بندی:</strong> {{ product.category }}</p>
+
+<p><strong>وزن:</strong> {{ product.weight }} گرم</p>
+
+<p><strong>درصد اجرت:</strong> {{ product.wage_percent }}%</p>
+
+<p><strong>قیمت نهایی:</strong> {{ product.final_price }}</p>
+
+<p><strong>فعال:</strong>
+{% if product.is_active %}
+بله
+{% else %}
+خیر
+{% endif %}
+</p>
+
+<p><strong>توضیحات:</strong></p>
+
+<p>{{ product.description|default:"-" }}</p>
+
+{% if product.image %}
+    <img src="{{ product.image.url }}"
+         alt="{{ product.name }}"
+         width="250">
+{% endif %}
+
+<br><br>
+
+<a href="{% url 'products:update' product.pk %}">
+    ویرایش
+</a>
+
+|
+
+<a href="{% url 'products:delete' product.pk %}">
+    حذف
+</a>
+
+|
+
+<a href="{% url 'products:list' %}">
+    بازگشت
+</a>
 
 {% endblock %}

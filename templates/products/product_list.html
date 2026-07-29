@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}
 محصولات
@@ -6,6 +6,48 @@
 
 {% block content %}
 
-<h1>لیست محصولات</h1>
+<h2>محصولات</h2>
+
+<a href="{% url 'products:create' %}">
+    افزودن محصول
+</a>
+
+<hr>
+
+{% for product in products %}
+
+<div style="margin-bottom:20px">
+
+    <strong>
+    <a href="{% url 'products:detail' product.pk %}">
+        {{ product.name }}
+    </a>
+    </strong><br>
+
+    کد: {{ product.product_code }}<br>
+
+    دسته‌بندی: {{ product.category }}<br>
+
+    وزن: {{ product.weight }} گرم<br>
+
+    <a href="{% url 'products:update' product.pk %}">
+        ویرایش
+    </a>
+
+    |
+
+    <a href="{% url 'products:delete' product.pk %}">
+        حذف
+    </a>
+
+</div>
+
+<hr>
+
+{% empty %}
+
+<p>محصولی وجود ندارد.</p>
+
+{% endfor %}
 
 {% endblock %}
