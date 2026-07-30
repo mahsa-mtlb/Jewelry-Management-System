@@ -1,0 +1,136 @@
+:root{
+    --primary:   #001F54;
+    --secondary: #FFE169;
+    --accent:    #003566;
+
+    --background:#F5F7FA;
+    --surface:   #FFFFFF;
+
+    --success:   #104911;
+    --danger:    #850A0A;
+
+    --text:      #1F2937;
+    --border:    #E5E7EB;
+
+    --radius:    12px;
+
+    --shadow:0 6px 20px rgba(0,0,0,.08);
+
+}
+
+.jm-body {
+    background: var(--background);
+    font-family: "Vazirmatn", sans-serif !important;
+    color: var(--primary) ;
+}
+
+
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: #00337f;
+    border-color: #00337f;
+}
+
+.container{
+
+    margin-top:30px;
+
+}
+
+.table-dark{
+
+    background-color: var(--primary) !important;
+
+}
+
+.table-dark th{
+
+    background-color: var(--primary) !important;
+
+    color: white;
+
+}
+.bg-success{
+
+    background-color: var(--success) !important;
+
+}
+
+.btn-danger{
+
+    background-color: var(--danger);
+
+    border-color: var(--danger);
+
+}
+
+.btn-warning{
+
+    background-color: var(--secondary);
+
+    border-color: var(--secondary);
+
+    color: var(--primary);
+
+    font-weight:600;
+
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar{
+
+    background: var(--primary);
+
+    min-height: 100vh;
+
+    padding: 24px 18px;
+
+}
+.sidebar-title{
+
+    color: var(--background);
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    font-weight: 700;
+
+}
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+.sidebar-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 16px;
+
+    border-radius:var(--radius);
+
+    transition:.25s;
+
+    font-weight:500;
+
+}
+.sidebar-menu a:hover{
+
+    background:rgba(255,225,105,.15);
+
+    color:var(--secondary);
+
+}

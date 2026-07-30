@@ -1,27 +1,27 @@
-<div class="col-md-2 bg-dark text-white min-vh-100 p-3">
+<div class="col-md-2 sidebar">
 
-    <h4 class="mb-4">
-        Jewelry
+    <h4 class="sidebar-title">
+        💎 Jewelry
     </h4>
 
-    <div class="list-group">
+    <nav class="sidebar-menu">
 
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="#">
             داشبورد
         </a>
 
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="{% url 'products:list' %}">
             محصولات
         </a>
 
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="{% url 'categories:list' %}">
             دسته‌بندی‌ها
         </a>
 
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="#">
             قیمت روز
         </a>
 
-    </div>
+    </nav>
 
 </div>
