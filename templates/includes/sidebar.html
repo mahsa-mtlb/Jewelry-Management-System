@@ -1,12 +1,16 @@
+{% load static %}
+
 <div class="col-md-2 sidebar">
 
-    <h4 class="sidebar-title">
-        💎 Jewelry
-    </h4>
+<div class="sidebar-logo">
+
+    <img src="{% static 'images/logo.png' %}" alt="Logo">
+
+</div>
 
     <nav class="sidebar-menu">
 
-        <a href="#">
+        <a href="{% url 'dashboard:home' %}">
             داشبورد
         </a>
 
@@ -18,7 +22,7 @@
             دسته‌بندی‌ها
         </a>
 
-        <a href="#">
+        <a href="{% url 'pricing:list' %}" class="list-group-item list-group-item-action">
             قیمت روز
         </a>
 

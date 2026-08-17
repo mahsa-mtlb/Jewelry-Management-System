@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+داشبورد
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">داشبورد</h2>
+
+<div class="row g-4">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+                    تعداد محصولات
+                </h6>
+
+                <h2>
+                    {{ product_count }}
+                </h2>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+                    تعداد دسته‌بندی‌ها
+                </h6>
+
+                <h2>
+                    {{ category_count }}
+                </h2>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+                    محصولات موجود
+                </h6>
+
+                <h2 class="text-success">
+                    {{ active_count }}
+                </h2>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+                    محصولات ناموجود
+                </h6>
+
+                <h2 class="text-danger">
+                    {{ inactive_count }}
+                </h2>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% if gold_price %}
+
+<div class="card mt-5 shadow-sm border-0">
+
+    <div class="card-body">
+
+        <h5 class="mb-3">
+            قیمت روز طلا
+        </h5>
+
+        <h3>
+            {{ gold_price.price_per_gram|floatformat:0 }} تومان
+        </h3>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

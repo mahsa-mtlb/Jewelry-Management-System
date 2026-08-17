@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}
+قیمت روز
+{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>قیمت روز طلا</h2>
+
+    <a href="{% url 'pricing:create' %}"
+       class="btn btn-primary">
+
+        ثبت قیمت جدید
+
+    </a>
+
+</div>
+
+<table class="table table-striped table-hover align-middle">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>قیمت هر گرم</th>
+            <th>درصد سود</th>
+            <th>تاریخ ثبت</th>
+            <th>عملیات</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for price in prices %}
+
+        <tr>
+
+            <td>{{ price.price_per_gram }}</td>
+
+            <td>{{ price.profit_percent }}٪</td>
+
+            <td>{{ price.created_at|date:"Y/m/d H:i" }}</td>
+
+            <td>
+
+                <a href="{% url 'pricing:update' price.pk %}"
+                   class="btn btn-warning btn-sm">
+
+                    ویرایش
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    {% empty %}
+
+        <tr>
+
+            <td colspan="4" class="text-center">
+
+                هنوز قیمتی ثبت نشده است.
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
